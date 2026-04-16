@@ -634,7 +634,6 @@ p  { line-height: 1.8; color: var(--text-mid); }
   .hero .lead { font-size: 0.97rem; margin-bottom: 2rem; }
 
   /* Grids to 1 col */
-  .footer__grid { grid-template-columns: 1fr; gap: 28px; }
   .steps { grid-template-columns: 1fr; }
   .image-strip { grid-template-columns: 1fr; }
 
@@ -659,12 +658,24 @@ p  { line-height: 1.8; color: var(--text-mid); }
   .nav__logo { font-size: 1.3rem; }
 
   /* Footer */
-  .footer__grid { grid-template-columns: 1fr 1fr; gap: 24px 32px; }
-  .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .footer__col-title { text-align: left; }
+  .footer__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+  }
+  .footer__grid > div:first-child {
+    grid-column: 1 / -1;
+    padding-bottom: 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .footer__logo { font-size: 1.5rem; }
+  .footer__tagline { font-size: 0.84rem; max-width: 100%; }
+  .footer__contact-item { font-size: 0.83rem; }
+  .footer__col-title { font-size: 0.68rem; text-align: left; }
   .footer__links { text-align: left; }
-  .footer__links a { display: block; }
-  .footer__logo, .footer__tagline { text-align: left; }
+  .footer__links a { display: block; font-size: 0.83rem; }
+  .footer__bottom { flex-direction: column; gap: 0.6rem; text-align: center; padding: 20px 0; }
+  .footer__disclaimer { font-size: 0.72rem; }
 }
 
 </style>
@@ -684,7 +695,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
         <a href="alumni-events.html">Community</a>
         <a href="about.html">About</a>
       </div>
-      <a href="contact.html" class="btn btn-primary nav__cta">Request a Call</a>
+      <a href="contact.html" class="btn btn-primary nav__cta">Get in Touch</a>
       <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
     </div>
   </nav>
