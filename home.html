@@ -828,12 +828,19 @@ p  { line-height: 1.8; color: var(--text-mid); }
         </div>
       </div>
 
-      <!-- Row 3: deck, kitchen angle, creek -->
-      <div class="photo-grid__row3">
-        <img src="assets/img/deck-pergola.jpg" alt="The Cove76 covered deck" class="gallery-img" style="height:240px;" onclick="openLightbox(this)">
-        <img src="assets/img/upstairs.jpg" alt="The Cove76 upstairs kitchen" class="gallery-img" style="height:240px;" onclick="openLightbox(this)">
-        <img src="assets/img/creek.jpg" alt="The creek near Cove76" class="gallery-img" style="height:240px; object-position:center 40%;" onclick="openLightbox(this)">
+      <!-- Row 3: 4 photos -->
+      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px;">
+        <img src="assets/img/deck-pergola.jpg" alt="The Cove76 deck seating" class="gallery-img" style="height:200px;" onclick="openLightbox(this)">
+        <img src="assets/img/deck-chairs.jpg" alt="The Cove76 deck with colourful chairs" class="gallery-img" style="height:200px;" onclick="openLightbox(this)">
+        <img src="assets/img/upstairs.jpg" alt="The Cove76 kitchen" class="gallery-img" style="height:200px;" onclick="openLightbox(this)">
+        <img src="assets/img/creek.jpg" alt="The creek near Cove76" class="gallery-img" style="height:200px; object-position:center 40%;" onclick="openLightbox(this)">
       </div>
+
+      <style>
+        @media (max-width:600px) {
+          .photo-grid__row3 { grid-template-columns: 1fr 1fr !important; }
+        }
+      </style>
 
       <script>
         function openLightbox(img) {
