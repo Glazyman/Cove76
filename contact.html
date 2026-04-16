@@ -1026,26 +1026,41 @@ p  { line-height: 1.8; color: var(--text-mid); }
           btn.textContent = 'Sending…';
           btn.disabled = true;
 
-          var data = new FormData(form);
+          /* Build a plain JSON object from form fields */
+          var data = {};
+          new FormData(form).forEach(function(val, key) { data[key] = val; });
+
           fetch(ENDPOINT, {
             method: 'POST',
-            body: data,
-            headers: { 'Accept': 'application/json' }
+            body: JSON.stringify(data),
+            headers: {
+              'Content-Type': 'application/json',
+              'Accept': 'application/json'
+            }
           })
-          .then(function(res) { return res.json(); })
+          .then(function(res) {
+            if (!res.ok) throw new Error('Network response was not ok');
+            return res.json();
+          })
           .then(function(json) {
             if (json.success === 'true' || json.success === true) {
               showSuccess();
             } else {
-              btn.textContent = originalText;
-              btn.disabled = false;
-              alert('Something went wrong. Please try again or email joe@cove76.com directly.');
+              throw new Error('Submission failed');
             }
           })
           .catch(function() {
+            /* Fallback: open mailto with form data pre-filled */
+            var subject = encodeURIComponent(data._subject || 'Inquiry from Cove76 website');
+            var body = encodeURIComponent(
+              Object.entries(data)
+                .filter(function(kv) { return !kv[0].startsWith('_'); })
+                .map(function(kv) { return kv[0] + ': ' + kv[1]; })
+                .join('\n')
+            );
+            window.location.href = 'mailto:joe@cove76.com?subject=' + subject + '&body=' + body;
             btn.textContent = originalText;
             btn.disabled = false;
-            alert('Could not send. Please email joe@cove76.com directly.');
           });
         });
       });
