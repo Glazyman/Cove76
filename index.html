@@ -663,7 +663,8 @@ p  { line-height: 1.8; color: var(--text-mid); }
   /* Section headers — center everything */
   .section-header { margin-bottom: 40px; max-width: 100%; text-align: center; }
   .section-header p { font-size: 0.97rem; }
-  .eyebrow { text-align: center; }
+  .section-header .eyebrow { text-align: center; }
+  .section-header .gold-line { margin: 1.2rem auto; }
 
   /* Nav */
   .nav__links, .nav__cta { display: none; }
@@ -685,8 +686,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 
   /* Feature grid */
   .feature-grid { grid-template-columns: 1fr; gap: 20px; }
-  .feature-item { text-align: center; }
-  .gold-line--left { margin-left: auto; margin-right: auto; }
+  .feature-card { text-align: left; }
 
   /* Steps */
   .steps { grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -704,9 +704,11 @@ p  { line-height: 1.8; color: var(--text-mid); }
   /* Image strip */
   .image-strip { grid-template-columns: 1fr 1fr; }
 
-  /* Split sections */
-  .split { text-align: center; }
-  .split .gold-line--left { margin-left: auto; }
+  /* Split sections — left-align content, don't force center */
+  .split { text-align: left; }
+  .split .eyebrow { text-align: left; }
+  .split .gold-line--left { margin-left: 0; }
+  .split .btn, .split .btn-outline { align-self: flex-start; }
 
   /* Forms */
   .form-grid { grid-template-columns: 1fr; }
@@ -768,10 +770,12 @@ p  { line-height: 1.8; color: var(--text-mid); }
   .nav__logo { font-size: 1.3rem; }
 
   /* Footer */
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 24px 32px; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .footer__col-title { text-align: center; }
-  .footer__links { text-align: center; }
+  .footer__col-title { text-align: left; }
+  .footer__links { text-align: left; }
   .footer__links a { display: block; }
+  .footer__logo, .footer__tagline { text-align: left; }
 }
 
 </style>
@@ -784,7 +788,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo">Cove<span>76</span></a>
       <div class="nav__links">
-        <a href="home.html">The Home</a>
+        <a href="home.html">The House</a>
         <a href="program.html">Program</a>
         <a href="admissions.html">Admissions</a>
         <a href="podcast.html">Podcast</a>
@@ -808,7 +812,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     </div>
     <nav class="nav__mobile-links">
       <a href="index.html">Home</a>
-      <a href="home.html">The Home</a>
+      <a href="home.html">The House</a>
       <a href="program.html">Program</a>
       <a href="admissions.html">Admissions</a>
       <a href="podcast.html">Podcast</a>
@@ -1014,7 +1018,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     </div>
   </section>
 
-  <!-- ── The Home Snapshot ── -->
+  <!-- ── The House Snapshot ── -->
   <section class="section section--cream" aria-labelledby="home-snap-heading">
     <div class="container">
       <div class="split">
@@ -1050,7 +1054,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
               </div>
             </div>
           </div>
-          <a href="home.html" class="btn btn-outline" style="margin-top: 2rem;">Tour the Home</a>
+          <a href="home.html" class="btn btn-outline" style="margin-top: 2rem;">Tour the House</a>
         </div>
         <div class="reveal reveal-delay-2">
           <div class="image-strip">
@@ -1299,16 +1303,16 @@ p  { line-height: 1.8; color: var(--text-mid); }
             community, and purpose rebuild lives, and keep them whole.
           </p>
           <div>
-            <div class="footer__contact-item">📞 <a href="tel:9148045622">(914) 804-5622</a></div>
-            <div class="footer__contact-item">✉ <a href="mailto:joe@cove76.com">joe@cove76.com</a></div>
-            <div class="footer__contact-item">📍 Upstate New York</div>
+            <div class="footer__contact-item"><a href="tel:9148045622">(914) 804-5622</a></div>
+            <div class="footer__contact-item"><a href="mailto:joe@cove76.com">joe@cove76.com</a></div>
+            <div class="footer__contact-item">Upstate New York</div>
           </div>
         </div>
 
         <div>
           <p class="footer__col-title">The Program</p>
           <nav class="footer__links" aria-label="Program pages">
-            <a href="home.html">The Home</a>
+            <a href="home.html">The House</a>
             <a href="program.html">Program & Structure</a>
             <a href="admissions.html">Admissions</a>
             <a href="alumni-events.html">Community & Events</a>

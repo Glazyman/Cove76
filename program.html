@@ -581,7 +581,8 @@ p  { line-height: 1.8; color: var(--text-mid); }
   /* Section headers — center everything */
   .section-header { margin-bottom: 40px; max-width: 100%; text-align: center; }
   .section-header p { font-size: 0.97rem; }
-  .eyebrow { text-align: center; }
+  .section-header .eyebrow { text-align: center; }
+  .section-header .gold-line { margin: 1.2rem auto; }
 
   /* Nav */
   .nav__links, .nav__cta { display: none; }
@@ -603,8 +604,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 
   /* Feature grid */
   .feature-grid { grid-template-columns: 1fr; gap: 20px; }
-  .feature-item { text-align: center; }
-  .gold-line--left { margin-left: auto; margin-right: auto; }
+  .feature-card { text-align: left; }
 
   /* Steps */
   .steps { grid-template-columns: 1fr 1fr; gap: 20px; }
@@ -622,9 +622,11 @@ p  { line-height: 1.8; color: var(--text-mid); }
   /* Image strip */
   .image-strip { grid-template-columns: 1fr 1fr; }
 
-  /* Split sections */
-  .split { text-align: center; }
-  .split .gold-line--left { margin-left: auto; }
+  /* Split sections — left-align content, don't force center */
+  .split { text-align: left; }
+  .split .eyebrow { text-align: left; }
+  .split .gold-line--left { margin-left: 0; }
+  .split .btn, .split .btn-outline { align-self: flex-start; }
 
   /* Forms */
   .form-grid { grid-template-columns: 1fr; }
@@ -686,10 +688,12 @@ p  { line-height: 1.8; color: var(--text-mid); }
   .nav__logo { font-size: 1.3rem; }
 
   /* Footer */
+  .footer__grid { grid-template-columns: 1fr 1fr; gap: 24px 32px; }
   .footer__bottom { flex-direction: column; gap: 0.5rem; text-align: center; }
-  .footer__col-title { text-align: center; }
-  .footer__links { text-align: center; }
+  .footer__col-title { text-align: left; }
+  .footer__links { text-align: left; }
   .footer__links a { display: block; }
+  .footer__logo, .footer__tagline { text-align: left; }
 }
 
 </style>
@@ -701,7 +705,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     <div class="container nav__inner">
       <a href="index.html" class="nav__logo">Cove<span>76</span></a>
       <div class="nav__links">
-        <a href="home.html">The Home</a>
+        <a href="home.html">The House</a>
         <a href="program.html" class="active">Program</a>
         <a href="admissions.html">Admissions</a>
         <a href="podcast.html">Podcast</a>
@@ -716,7 +720,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 
   <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <button class="nav__mobile-close" aria-label="Close menu">✕</button>
-    <a href="index.html">Home</a><a href="home.html">The Home</a><a href="program.html">Program</a>
+    <a href="index.html">Home</a><a href="home.html">The House</a><a href="program.html">Program</a>
     <a href="admissions.html">Admissions</a><a href="podcast.html">Podcast</a><a href="referrals.html">Directory</a>
     <a href="alumni-events.html">Community</a><a href="about.html">About</a><a href="contact.html">Contact Us</a>
   </div>
@@ -976,11 +980,11 @@ p  { line-height: 1.8; color: var(--text-mid); }
           <a href="index.html" class="footer__logo">Cove<span>76</span></a>
           <p class="footer__tagline">A kosher sober living home upstate New York where accountability, community, and purpose rebuild lives.</p>
           <div>
-            <div class="footer__contact-item">📞 <a href="tel:9148045622">(914) 804-5622</a></div>
-            <div class="footer__contact-item">✉ <a href="mailto:joe@cove76.com">joe@cove76.com</a></div>
+            <div class="footer__contact-item"><a href="tel:9148045622">(914) 804-5622</a></div>
+            <div class="footer__contact-item"><a href="mailto:joe@cove76.com">joe@cove76.com</a></div>
           </div>
         </div>
-        <div><p class="footer__col-title">The Program</p><nav class="footer__links"><a href="home.html">The Home</a><a href="program.html">Program</a><a href="admissions.html">Admissions</a><a href="alumni-events.html">Community</a></nav></div>
+        <div><p class="footer__col-title">The Program</p><nav class="footer__links"><a href="home.html">The House</a><a href="program.html">Program</a><a href="admissions.html">Admissions</a><a href="alumni-events.html">Community</a></nav></div>
         <div><p class="footer__col-title">Resources</p><nav class="footer__links"><a href="referrals.html">Referral Directory</a><a href="podcast.html">Podcast</a><a href="about.html">About</a><a href="contact.html">Contact</a></nav></div>
         <div><p class="footer__col-title">Connect</p><nav class="footer__links"><a href="https://www.youtube.com/@Thestruggle.podcast" target="_blank" rel="noopener">YouTube ↗</a><a href="https://podcasts.apple.com/us/podcast/the-struggle/id1796423076" target="_blank" rel="noopener">Apple Podcasts ↗</a></nav></div>
       </div>
