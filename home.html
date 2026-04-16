@@ -793,22 +793,65 @@ p  { line-height: 1.8; color: var(--text-mid); }
         </p>
       </div>
 
-      <!-- Row 1: Hero shot full width -->
-      <div style="margin-bottom:12px;">
-        <img src="assets/img/house-exterior.jpg" alt="Cove76, the house exterior" style="width:100%; height:420px; object-fit:cover; object-position:15% 65%; border-radius:var(--radius-md); display:block;">
+      <!-- Lightbox overlay -->
+      <div id="lb-overlay" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.92); z-index:9999; align-items:center; justify-content:center; padding:20px;" onclick="closeLightbox()">
+        <button onclick="closeLightbox()" aria-label="Close" style="position:absolute; top:20px; right:28px; background:none; border:none; color:#fff; font-size:2.2rem; cursor:pointer; line-height:1;">&times;</button>
+        <img id="lb-img" src="" alt="" style="max-width:92vw; max-height:88vh; object-fit:contain; border-radius:12px; box-shadow:0 8px 60px rgba(0,0,0,0.6);" onclick="event.stopPropagation()">
       </div>
-      <!-- Row 2: 3 equal columns -->
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-bottom:12px;">
-        <img src="assets/img/living-room.jpg" alt="The Cove76 living room" style="width:100%; height:220px; object-fit:cover; border-radius:var(--radius-sm); display:block;">
-        <img src="assets/img/kitchen.jpg" alt="The Cove76 kitchen" style="width:100%; height:220px; object-fit:cover; border-radius:var(--radius-sm); display:block;">
-        <img src="assets/img/bedroom.jpg" alt="A private bedroom" style="width:100%; height:220px; object-fit:cover; object-position:40% 60%; border-radius:var(--radius-sm); display:block;">
+
+      <style>
+        .gallery-img { cursor: zoom-in; transition: opacity .25s, transform .25s; display: block; width: 100%; object-fit: cover; border-radius: var(--radius-sm); }
+        .gallery-img:hover { opacity: 0.88; transform: scale(1.01); }
+        .photo-grid { display: grid; gap: 10px; }
+        .photo-grid__hero { border-radius: var(--radius-md) !important; }
+        /* Row 2: big left + stacked right */
+        .photo-grid__row2 { display: grid; grid-template-columns: 3fr 2fr; gap: 10px; margin-top: 10px; }
+        .photo-grid__row2-right { display: grid; grid-template-rows: 1fr 1fr; gap: 10px; }
+        /* Row 3: 3 equal */
+        .photo-grid__row3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 10px; }
+        @media (max-width: 600px) {
+          .photo-grid__row2 { grid-template-columns: 1fr; }
+          .photo-grid__row2-right { grid-template-rows: auto; grid-template-columns: 1fr 1fr; }
+          .photo-grid__row3 { grid-template-columns: 1fr 1fr; }
+        }
+      </style>
+
+      <!-- Hero: full-width exterior -->
+      <img src="assets/img/house-exterior.jpg" alt="Cove76, the house exterior" class="gallery-img photo-grid__hero" style="height:440px; object-position:15% 65%;" onclick="openLightbox(this)">
+
+      <!-- Row 2: living room large left, kitchen + bedroom stacked right -->
+      <div class="photo-grid__row2">
+        <img src="assets/img/living-room.jpg" alt="The Cove76 living room" class="gallery-img" style="height:340px;" onclick="openLightbox(this)">
+        <div class="photo-grid__row2-right">
+          <img src="assets/img/kitchen.jpg" alt="The Cove76 kitchen" class="gallery-img" style="height:165px;" onclick="openLightbox(this)">
+          <img src="assets/img/bedroom.jpg" alt="A private bedroom" class="gallery-img" style="height:165px; object-position:40% 60%;" onclick="openLightbox(this)">
+        </div>
       </div>
-      <!-- Row 3: 3 equal columns -->
-      <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:12px;">
-        <img src="assets/img/deck-pergola.jpg" alt="The Cove76 covered deck" style="width:100%; height:220px; object-fit:cover; border-radius:var(--radius-sm); display:block;">
-        <img src="assets/img/upstairs.jpg" alt="The Cove76 upstairs" style="width:100%; height:220px; object-fit:cover; border-radius:var(--radius-sm); display:block;">
-        <img src="assets/img/creek.jpg" alt="The creek near Cove76" style="width:100%; height:220px; object-fit:cover; object-position:center 40%; border-radius:var(--radius-sm); display:block;">
+
+      <!-- Row 3: deck, kitchen angle, creek -->
+      <div class="photo-grid__row3">
+        <img src="assets/img/deck-pergola.jpg" alt="The Cove76 covered deck" class="gallery-img" style="height:240px;" onclick="openLightbox(this)">
+        <img src="assets/img/upstairs.jpg" alt="The Cove76 upstairs kitchen" class="gallery-img" style="height:240px;" onclick="openLightbox(this)">
+        <img src="assets/img/creek.jpg" alt="The creek near Cove76" class="gallery-img" style="height:240px; object-position:center 40%;" onclick="openLightbox(this)">
       </div>
+
+      <script>
+        function openLightbox(img) {
+          var overlay = document.getElementById('lb-overlay');
+          var lbImg = document.getElementById('lb-img');
+          lbImg.src = img.src;
+          lbImg.alt = img.alt;
+          overlay.style.display = 'flex';
+          document.body.style.overflow = 'hidden';
+        }
+        function closeLightbox() {
+          document.getElementById('lb-overlay').style.display = 'none';
+          document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', function(e) {
+          if (e.key === 'Escape') closeLightbox();
+        });
+      </script>
     </div>
   </section>
 
