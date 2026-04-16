@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About Joseph Farkas, Cove76</title>
-  <meta name="description" content="Joseph Farkas is the founder and director of Cove76, and the host of The Struggle podcast. Learn why he built this, and what drives everything at Cove76." />
+  <title>About Joe Farkas, Cove76</title>
+  <meta name="description" content="Joe Farkas is the founder and director of Cove76, and the host of The Struggle podcast. Learn why he built this, and what drives everything at Cove76." />
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -355,7 +355,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card__body { padding: 28px 32px; }
 
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
 .feature-card {
   background: var(--white);
@@ -411,7 +411,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .image-strip > div { border-radius: var(--radius-sm); background: #d8d2c8; aspect-ratio: 4/3; overflow: hidden; }
 
 /* ── Podcast ── */
-.podcast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.podcast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .podcast-embed { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--bg-dark); }
 .podcast-embed iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
 .podcast-embed__label { padding: 16px 20px; background: var(--bg-mid); }
@@ -428,7 +428,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 }
 .filter-btn:hover, .filter-btn.active { border-color: var(--text); color: var(--white); background: var(--text); }
 
-.provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.provider-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .provider-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; transition: all var(--transition); display: flex; flex-direction: column; gap: 12px; }
 .provider-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .provider-card__avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--text); font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; border: 1.5px solid var(--border-dark); }
@@ -458,7 +458,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .faq-item.open .faq-answer { display: block; }
 
 /* ── Steps ── */
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; counter-reset: steps; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: steps; }
 .step { text-align: center; }
 .step::before { counter-increment: steps; content: counter(steps, decimal-leading-zero); display: block; font-family: var(--font-head); font-size: 2.8rem; font-weight: 700; color: var(--border-dark); line-height: 1; margin-bottom: 0.5rem; }
 .step h4 { margin-bottom: 0.5rem; }
@@ -744,7 +744,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
   <header class="page-hero" aria-labelledby="page-title">
     <div class="container">
       <span class="eyebrow">About</span>
-      <h1 id="page-title">Joseph Farkas<br>and why Cove76 exists.</h1>
+      <h1 id="page-title">Joe Farkas<br>and why Cove76 exists.</h1>
       <p class="lead">He built what he wished had existed. That's the whole story, and the reason it works.</p>
     </div>
   </header>
@@ -754,15 +754,15 @@ p  { line-height: 1.8; color: var(--text-mid); }
     <div class="container">
       <div class="split">
         <div class="reveal" style="display:flex; flex-direction:column; align-items:center;">
-          <div class="bio-photo" aria-label="Photo of Joseph Farkas">
-            <img src="assets/img/joseph-farkas.jpg" alt="Joseph Farkas, founder of Cove76"
+          <div class="bio-photo" aria-label="Photo of Joe Farkas">
+            <img src="assets/img/joseph-farkas.jpg" alt="Joe Farkas, founder of Cove76"
               style="width:100%; height:100%; object-fit:cover; object-position:center top; border-radius:var(--radius-lg); display:block;">
           </div>
-          <p style="text-align:center; font-size:0.85rem; color:var(--text-light); margin-top:0.9rem; font-weight:500;">Joseph Farkas · Founder, Cove76</p>
+          <p style="text-align:center; font-size:0.85rem; color:var(--text-light); margin-top:0.9rem; font-weight:500;">Joe Farkas · Founder, Cove76</p>
         </div>
         <div class="reveal reveal-delay-1">
           <span class="eyebrow">Who He Is</span>
-          <h2 id="bio-heading">Joseph Farkas</h2>
+          <h2 id="bio-heading">Joe Farkas</h2>
           <span class="gold-line gold-line--left" aria-hidden="true"></span>
           <p class="lead" style="margin-top: 1.2rem;">
             My name is Joe Farkas. I've always been a searcher by nature, someone driven to understand 
@@ -860,7 +860,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
         <p>"Addiction is a lack of love problem. The opposite of addiction is connection. 
         Cove76 is a Love Factory, and every person who walks through our door deserves 
         to be sent back into the world as the most whole, most productive version of themselves."</p>
-        <cite>Joseph Farkas, Founder</cite>
+        <cite>Joe Farkas, Founder</cite>
       </div>
     </div>
   </section>
@@ -909,12 +909,12 @@ p  { line-height: 1.8; color: var(--text-mid); }
     </div>
   </section>
 
-  <!-- ── Contact Joseph ── -->
+  <!-- ── Contact Joe ── -->
   <section class="cta-banner" aria-labelledby="about-cta-heading">
     <div class="container">
-      <span class="eyebrow" style="color: var(--gold-light);">Talk to Joseph</span>
+      <span class="eyebrow" style="color: var(--gold-light);">Talk to Joe</span>
       <h2 id="about-cta-heading">Questions are welcome.<br>Calls are answered.</h2>
-      <p>Joseph is reachable directly: call, text, or email. There's no intake coordinator between you and the person running this.</p>
+      <p>Joe is reachable directly: call, text, or email. There's no intake coordinator between you and the person running this.</p>
       <div class="btn-actions">
         <a href="contact.html" class="btn btn-primary">Send a Message</a>
         <a href="tel:9148045622" class="btn btn-outline-light">Call (914) 804-5622</a>

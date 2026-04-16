@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact, Cove76 | Confidential Inquiry</title>
-  <meta name="description" content="Reach out to Cove76 for a confidential conversation about placement, referrals, or any questions. Joseph Farkas responds personally." />
+  <meta name="description" content="Reach out to Cove76 for a confidential conversation about placement, referrals, or any questions. Joe Farkas responds personally." />
   <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
@@ -355,7 +355,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card__body { padding: 28px 32px; }
 
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
 .feature-card {
   background: var(--white);
@@ -411,7 +411,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .image-strip > div { border-radius: var(--radius-sm); background: #d8d2c8; aspect-ratio: 4/3; overflow: hidden; }
 
 /* ── Podcast ── */
-.podcast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.podcast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .podcast-embed { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--bg-dark); }
 .podcast-embed iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
 .podcast-embed__label { padding: 16px 20px; background: var(--bg-mid); }
@@ -428,7 +428,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 }
 .filter-btn:hover, .filter-btn.active { border-color: var(--text); color: var(--white); background: var(--text); }
 
-.provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.provider-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .provider-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; transition: all var(--transition); display: flex; flex-direction: column; gap: 12px; }
 .provider-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .provider-card__avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--text); font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; border: 1.5px solid var(--border-dark); }
@@ -458,7 +458,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .faq-item.open .faq-answer { display: block; }
 
 /* ── Steps ── */
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; counter-reset: steps; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: steps; }
 .step { text-align: center; }
 .step::before { counter-increment: steps; content: counter(steps, decimal-leading-zero); display: block; font-family: var(--font-head); font-size: 2.8rem; font-weight: 700; color: var(--border-dark); line-height: 1; margin-bottom: 0.5rem; }
 .step h4 { margin-bottom: 0.5rem; }
@@ -769,7 +769,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     <div class="container">
       <span class="eyebrow">Contact</span>
       <h1 id="page-title">Reach out. We'll respond<br>within 24 hours.</h1>
-      <p class="lead">There's no gatekeeping here. Joseph and the team are accessible: call, text, email, or fill out the form below.</p>
+      <p class="lead">There's no gatekeeping here. Joe and the team are accessible: call, text, email, or fill out the form below.</p>
     </div>
   </header>
 
@@ -781,7 +781,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
         <!-- Left: Direct contact info -->
         <div class="reveal">
           <span class="eyebrow">Direct Contact</span>
-          <h2 id="contact-heading" style="font-size: 1.8rem;">Joseph Farkas</h2>
+          <h2 id="contact-heading" style="font-size: 1.8rem;">Joe Farkas</h2>
           <span class="gold-line gold-line--left" aria-hidden="true"></span>
           <p style="margin-top: 1.2rem; margin-bottom: 2rem;">
             All inquiries are treated with complete confidentiality. 
@@ -860,7 +860,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
             <div id="form-success" style="display:none; text-align:center; padding: 3rem 1rem;">
               <div style="width:56px; height:56px; border-radius:50%; background:var(--gold-pale); border:2px solid var(--gold); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; font-size:1.4rem; color:var(--gold);">✓</div>
               <h3 style="margin-bottom:0.6rem;">Message received.</h3>
-              <p style="color:var(--text-mid); max-width:400px; margin:0 auto 1.8rem;">Joseph will be in touch shortly, usually within a few hours. Everything you shared is completely confidential.</p>
+              <p style="color:var(--text-mid); max-width:400px; margin:0 auto 1.8rem;">Joe will be in touch shortly, usually within a few hours. Everything you shared is completely confidential.</p>
               <button onclick="resetForms()" class="btn btn-outline">Send another message</button>
             </div>
 

@@ -355,7 +355,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card__body { padding: 28px 32px; }
 
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
 .feature-card {
   background: var(--white);
@@ -411,7 +411,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .image-strip > div { border-radius: var(--radius-sm); background: #d8d2c8; aspect-ratio: 4/3; overflow: hidden; }
 
 /* ── Podcast ── */
-.podcast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.podcast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .podcast-embed { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--bg-dark); }
 .podcast-embed iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
 .podcast-embed__label { padding: 16px 20px; background: var(--bg-mid); }
@@ -428,7 +428,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 }
 .filter-btn:hover, .filter-btn.active { border-color: var(--text); color: var(--white); background: var(--text); }
 
-.provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.provider-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .provider-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; transition: all var(--transition); display: flex; flex-direction: column; gap: 12px; }
 .provider-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .provider-card__avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--text); font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; border: 1.5px solid var(--border-dark); }
@@ -458,7 +458,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .faq-item.open .faq-answer { display: block; }
 
 /* ── Steps ── */
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; counter-reset: steps; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: steps; }
 .step { text-align: center; }
 .step::before { counter-increment: steps; content: counter(steps, decimal-leading-zero); display: block; font-family: var(--font-head); font-size: 2.8rem; font-weight: 700; color: var(--border-dark); line-height: 1; margin-bottom: 0.5rem; }
 .step h4 { margin-bottom: 0.5rem; }
@@ -757,7 +757,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
       <div class="steps" style="max-width: 860px; margin: 0 auto;">
         <div class="step reveal">
           <h4>Reach Out</h4>
-          <p>Call, text, or fill out the contact form. Joseph or a team member responds, usually within a few hours, always within 24.</p>
+          <p>Call, text, or fill out the contact form. Joe or a team member responds, usually within a few hours, always within 24.</p>
         </div>
         <div class="step reveal reveal-delay-1">
           <h4>The Fit Call</h4>
@@ -959,7 +959,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     <div class="container">
       <span class="eyebrow" style="color: var(--gold-light);">Take the First Step</span>
       <h2 id="admissions-cta-heading">Start with a conversation.<br>Everything else follows.</h2>
-      <p>Call Joseph directly or submit a confidential inquiry. We respond the same day.</p>
+      <p>Call Joe directly or submit a confidential inquiry. We respond the same day.</p>
       <div class="btn-actions">
         <a href="contact.html" class="btn btn-primary">Send a Confidential Inquiry</a>
         <a href="tel:9148045622" class="btn btn-outline-light">Call (914) 804-5622</a>

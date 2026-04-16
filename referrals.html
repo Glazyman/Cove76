@@ -355,7 +355,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .card:hover { transform: translateY(-4px); box-shadow: var(--shadow-md); }
 .card__body { padding: 28px 32px; }
 
-.feature-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+.feature-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 
 .feature-card {
   background: var(--white);
@@ -411,7 +411,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .image-strip > div { border-radius: var(--radius-sm); background: #d8d2c8; aspect-ratio: 4/3; overflow: hidden; }
 
 /* ── Podcast ── */
-.podcast-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+.podcast-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 24px; }
 .podcast-embed { border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); background: var(--bg-dark); }
 .podcast-embed iframe { width: 100%; aspect-ratio: 16/9; border: none; display: block; }
 .podcast-embed__label { padding: 16px 20px; background: var(--bg-mid); }
@@ -428,7 +428,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 }
 .filter-btn:hover, .filter-btn.active { border-color: var(--text); color: var(--white); background: var(--text); }
 
-.provider-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 24px; }
+.provider-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
 .provider-card { background: var(--white); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 28px; transition: all var(--transition); display: flex; flex-direction: column; gap: 12px; }
 .provider-card:hover { border-color: var(--gold); box-shadow: var(--shadow-md); transform: translateY(-2px); }
 .provider-card__avatar { width: 52px; height: 52px; border-radius: 50%; background: var(--bg); display: flex; align-items: center; justify-content: center; color: var(--text); font-family: var(--font-head); font-size: 1.2rem; font-weight: 700; flex-shrink: 0; border: 1.5px solid var(--border-dark); }
@@ -458,7 +458,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
 .faq-item.open .faq-answer { display: block; }
 
 /* ── Steps ── */
-.steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 32px; counter-reset: steps; }
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 32px; counter-reset: steps; }
 .step { text-align: center; }
 .step::before { counter-increment: steps; content: counter(steps, decimal-leading-zero); display: block; font-family: var(--font-head); font-size: 2.8rem; font-weight: 700; color: var(--border-dark); line-height: 1; margin-bottom: 0.5rem; }
 .step h4 { margin-bottom: 0.5rem; }
@@ -740,7 +740,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
     <div class="container">
       <span class="eyebrow">Referral Directory</span>
       <h1 id="page-title">Trusted professionals.<br>Real community connections.</h1>
-      <p class="lead">Every person in our directory has been reviewed by Joseph personally. These are providers our families actually use.</p>
+      <p class="lead">Every person in our directory has been reviewed by Joe personally. These are providers our families actually use.</p>
     </div>
   </header>
 
@@ -782,7 +782,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
         <p>
           We accept applications from licensed therapists, certified coaches, psychiatrists, 
           employment specialists, and educational programs serving the recovery population. 
-          All applicants are reviewed by Joseph before approval.
+          All applicants are reviewed by Joe before approval.
         </p>
         <a href="#apply" class="btn btn-primary">Apply to Be Listed</a>
       </div>
@@ -797,8 +797,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
         <h2 id="apply-heading">Join the directory.</h2>
         <span class="gold-line" aria-hidden="true"></span>
         <p class="lead">
-          Fill out the form below and Joseph will review your application personally. 
-          No payment is required, this is a relationship, not a transaction.
+          Fill out the form below and Joe will review your application personally. If it's a good fit, he'll be in touch with next steps.
         </p>
       </div>
 
@@ -856,7 +855,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
               <input type="text" id="app-jewish" name="jewish_background" placeholder="e.g. Frum background, experience with Orthodox community, Yiddish-speaking" />
             </div>
             <div class="form-group form-grid--full">
-              <label for="app-notes">Anything else Joseph should know</label>
+              <label for="app-notes">Anything else Joe should know</label>
               <textarea id="app-notes" name="notes" placeholder="Background, approach, why you'd like to be listed…"></textarea>
             </div>
           </div>
@@ -865,7 +864,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
             <button type="submit" class="btn btn-primary" style="min-width: 200px;">Submit Application</button>
           </div>
           <p class="form-disclaimer">
-            Applications are reviewed personally by Joseph Farkas. Listing is free and subject to approval. 
+            Applications are reviewed personally by Joe Farkas. Listing is free and subject to approval. 
             We may follow up by phone or email. All information is kept confidential.
           </p>
         </form>
