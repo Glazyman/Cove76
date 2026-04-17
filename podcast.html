@@ -120,9 +120,12 @@ p  { line-height: 1.8; color: var(--text-mid); }
 
 .nav__cta { flex-shrink: 0; font-size: 0.83rem; padding: 10px 22px; }
 
-.nav__hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; cursor: pointer; }
-.nav__hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all var(--transition); }
-.nav.scrolled .nav__hamburger span { background: var(--text); }
+.nav__hamburger { display: none; flex-direction: column; justify-content: center; gap: 5px; width: 40px; height: 40px; padding: 8px; cursor: pointer; background: none; border: none; border-radius: 8px; transition: background var(--transition); }
+.nav__hamburger:hover { background: var(--border); }
+.nav__hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease; transform-origin: center; }
+.nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 .nav__overlay { position: fixed; inset: 0; background: rgba(10,10,10,0.55); backdrop-filter: blur(4px); z-index: 1000; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; }
 .nav__overlay.open { opacity: 1; pointer-events: all; }
@@ -710,7 +713,8 @@ p  { line-height: 1.8; color: var(--text-mid); }
       <a href="about.html">About</a>
     </nav>
     <div class="nav__mobile-footer">
-      <a href="contact.html" class="btn btn-primary">Get in Touch</a>
+      <a href="contact.html" class="btn-mobile-cta">Get in Touch</a>
+      <p class="nav__mobile-tagline">Kosher · Upstate NY · VIP Sober Living</p>
     </div>
   </div>
   <script>
