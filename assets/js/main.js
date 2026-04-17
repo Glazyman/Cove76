@@ -25,32 +25,39 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   /* ── Mobile menu ────────────────────────────────────────── */
-  const hamburger  = document.querySelector('.nav__hamburger');
-  const mobileMenu = document.querySelector('.nav__mobile');
-  const mobileClose = document.querySelector('.nav__mobile-close');
+  const hamburger   = document.getElementById('navHam');
+  const mobileMenu  = document.getElementById('mobileMenu');
+  const mobileOverlay = document.getElementById('navOverlay');
+  const mobileClose = document.getElementById('mobileClose');
 
-  if (hamburger && mobileMenu) {
-    hamburger.addEventListener('click', () => {
-      mobileMenu.classList.add('open');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  if (mobileClose && mobileMenu) {
-    mobileClose.addEventListener('click', closeMobile);
-  }
-
-  if (mobileMenu) {
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMobile);
-    });
+  function openMobile() {
+    if (mobileMenu)    mobileMenu.classList.add('open');
+    if (mobileOverlay) mobileOverlay.classList.add('open');
+    if (hamburger)     hamburger.classList.add('open');
+    if (hamburger)     hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
   }
 
   function closeMobile() {
-    if (mobileMenu) {
-      mobileMenu.classList.remove('open');
-      document.body.style.overflow = '';
-    }
+    if (mobileMenu)    mobileMenu.classList.remove('open');
+    if (mobileOverlay) mobileOverlay.classList.remove('open');
+    if (hamburger)     hamburger.classList.remove('open');
+    if (hamburger)     hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+
+  if (hamburger)     hamburger.addEventListener('click', openMobile);
+  if (mobileClose)   mobileClose.addEventListener('click', closeMobile);
+  if (mobileOverlay) mobileOverlay.addEventListener('click', closeMobile);
+  if (mobileMenu)    mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobile));
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeMobile(); });
+
+  /* Mark active link in mobile menu */
+  if (mobileMenu) {
+    const path = location.pathname.split('/').pop() || 'index.html';
+    mobileMenu.querySelectorAll('a').forEach(a => {
+      if (a.getAttribute('href') === path) a.classList.add('active');
+    });
   }
 
   /* ── FAQ accordion ──────────────────────────────────────── */

@@ -120,66 +120,105 @@ p  { line-height: 1.8; color: var(--text-mid); }
 
 .nav__cta { flex-shrink: 0; font-size: 0.83rem; padding: 10px 22px; }
 
-.nav__hamburger { display: none; flex-direction: column; gap: 5px; padding: 6px; cursor: pointer; }
-.nav__hamburger span { display: block; width: 22px; height: 2px; background: var(--text); border-radius: 2px; transition: all var(--transition); }
-.nav.scrolled .nav__hamburger span { background: var(--text); }
+.nav__hamburger {
+  display: none; flex-direction: column; justify-content: center;
+  gap: 5px; width: 40px; height: 40px; padding: 8px;
+  cursor: pointer; background: none; border: none; border-radius: 8px;
+  transition: background var(--transition);
+}
+.nav__hamburger:hover { background: var(--border); }
+.nav__hamburger span {
+  display: block; width: 22px; height: 2px;
+  background: var(--text); border-radius: 2px;
+  transition: transform 0.3s ease, opacity 0.3s ease, width 0.3s ease;
+  transform-origin: center;
+}
+.nav__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav__hamburger.open span:nth-child(2) { opacity: 0; width: 0; }
+.nav__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
-/* Mobile nav */
+/* Overlay */
 .nav__overlay {
   position: fixed; inset: 0;
-  background: rgba(17,17,17,0.45);
+  background: rgba(10,10,10,0.55);
+  backdrop-filter: blur(4px);
   z-index: 1000;
   opacity: 0; pointer-events: none;
   transition: opacity 0.3s ease;
 }
 .nav__overlay.open { opacity: 1; pointer-events: all; }
 
+/* Drawer */
 .nav__mobile {
   position: fixed; top: 0; right: 0; bottom: 0;
-  width: min(290px, 82vw);
-  background: var(--bg); z-index: 1001;
+  width: min(300px, 85vw);
+  background: #111111;
+  z-index: 1001;
   display: flex; flex-direction: column;
   overflow-y: auto;
-  box-shadow: -12px 0 48px rgba(0,0,0,0.18);
-  transform: translateX(105%);
+  transform: translateX(100%);
   visibility: hidden;
-  transition: transform 0.32s cubic-bezier(0.4,0,0.2,1), visibility 0.32s;
+  transition: transform 0.35s cubic-bezier(0.4,0,0.2,1), visibility 0.35s;
 }
 .nav__mobile.open { transform: translateX(0); visibility: visible; }
 
 .nav__mobile-header {
   display: flex; align-items: center; justify-content: space-between;
-  padding: 18px 20px; border-bottom: 1px solid var(--border);
+  padding: 20px 24px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
   flex-shrink: 0;
 }
 .nav__mobile-logo {
-  font-family: var(--font-head); font-size: 1.3rem; font-weight: 700; color: var(--text);
+  font-family: var(--font-head); font-size: 1.35rem; font-weight: 700; color: #fff;
+  letter-spacing: -0.01em;
 }
 .nav__mobile-logo span { color: var(--gold); }
-.nav__mobile-links { flex: 1; display: flex; flex-direction: column; }
-.nav__mobile a {
-  font-family: var(--font-body); font-size: 0.97rem; font-weight: 500;
-  color: var(--text); padding: 14px 20px;
-  border-bottom: 1px solid var(--border);
-  transition: background var(--transition), color var(--transition);
-  text-align: left; width: 100%; display: block;
-}
-.nav__mobile a:hover, .nav__mobile a:active { background: var(--bg-alt); color: var(--gold); }
-.nav__mobile-footer {
-  padding: 18px 20px; border-top: 1px solid var(--border); flex-shrink: 0;
-}
-.nav__mobile-footer .btn {
-  width: 100%; text-align: center; justify-content: center; display: block;
-  font-size: 0.9rem; padding: 12px 20px;
-}
 .nav__mobile-close {
-  width: 32px; height: 32px; border-radius: 50%;
+  width: 34px; height: 34px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  font-size: 0.95rem; color: var(--text); cursor: pointer;
-  background: var(--bg-alt); border: 1px solid var(--border);
-  transition: background var(--transition); flex-shrink: 0;
+  font-size: 1rem; color: rgba(255,255,255,0.6); cursor: pointer;
+  background: rgba(255,255,255,0.07); border: 1px solid rgba(255,255,255,0.1);
+  transition: all var(--transition); flex-shrink: 0; line-height: 1;
 }
-.nav__mobile-close:hover { background: var(--border); }
+.nav__mobile-close:hover { background: rgba(255,255,255,0.14); color: #fff; }
+
+.nav__mobile-links {
+  flex: 1; display: flex; flex-direction: column;
+  padding: 10px 0;
+}
+.nav__mobile-links a {
+  font-family: var(--font-body); font-size: 1rem; font-weight: 500;
+  color: rgba(255,255,255,0.75);
+  padding: 13px 24px;
+  display: flex; align-items: center;
+  border-left: 2px solid transparent;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+  letter-spacing: 0.01em;
+}
+.nav__mobile-links a:hover,
+.nav__mobile-links a.active {
+  color: #fff;
+  border-left-color: var(--gold);
+  background: rgba(255,255,255,0.05);
+}
+.nav__mobile-footer {
+  padding: 20px 24px 28px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  flex-shrink: 0; display: flex; flex-direction: column; gap: 10px;
+}
+.nav__mobile-footer .btn-mobile-cta {
+  display: block; width: 100%; text-align: center;
+  background: var(--gold); color: #fff;
+  font-family: var(--font-body); font-size: 0.9rem; font-weight: 600;
+  letter-spacing: 0.04em; text-transform: uppercase;
+  padding: 13px 20px; border-radius: 100px;
+  transition: background var(--transition), transform var(--transition);
+}
+.nav__mobile-footer .btn-mobile-cta:hover { background: #a07840; transform: translateY(-1px); }
+.nav__mobile-tagline {
+  text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.3);
+  letter-spacing: 0.06em; text-transform: uppercase;
+}
 
 /* ── Hero (Split Layout) ── */
 .hero {
@@ -754,15 +793,30 @@ p  { line-height: 1.8; color: var(--text-mid); }
         <a href="about.html">About</a>
       </div>
       <a href="contact.html" class="btn btn-primary nav__cta active">Get in Touch</a>
-      <button class="nav__hamburger" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <button class="nav__hamburger" id="navHam" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
-  <div class="nav__mobile" role="dialog" aria-modal="true" aria-label="Mobile navigation">
-    <button class="nav__mobile-close" aria-label="Close menu">✕</button>
-    <a href="index.html">Home</a><a href="home.html">The House</a><a href="program.html">Program</a>
-    <a href="admissions.html">Admissions</a><a href="podcast.html">Podcast</a><a href="referrals.html">Directory</a>
-    <a href="alumni-events.html">Community</a><a href="about.html">About</a><a href="contact.html">Contact Us</a>
+  <div class="nav__overlay" id="navOverlay"></div>
+  <div class="nav__mobile" id="mobileMenu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <div class="nav__mobile-header">
+      <span class="nav__mobile-logo">Cove<span>76</span></span>
+      <button class="nav__mobile-close" id="mobileClose" aria-label="Close menu">✕</button>
+    </div>
+    <nav class="nav__mobile-links">
+      <a href="index.html">Home</a>
+      <a href="home.html">The House</a>
+      <a href="program.html">Program</a>
+      <a href="admissions.html">Admissions</a>
+      <a href="podcast.html">Podcast</a>
+      <a href="referrals.html">Directory</a>
+      <a href="alumni-events.html">Community</a>
+      <a href="about.html">About</a>
+    </nav>
+    <div class="nav__mobile-footer">
+      <a href="contact.html" class="btn-mobile-cta">Get in Touch</a>
+      <p class="nav__mobile-tagline">Kosher · Upstate NY · VIP Sober Living</p>
+    </div>
   </div>
 
   <header class="page-hero" aria-labelledby="page-title">
