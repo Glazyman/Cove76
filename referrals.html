@@ -800,62 +800,69 @@ p  { line-height: 1.8; color: var(--text-mid); }
   <header class="page-hero" aria-labelledby="page-title">
     <div class="container">
       <span class="eyebrow">Referral Directory</span>
-      <h1 id="page-title">Trusted professionals.<br>Real community connections.</h1>
-      <p class="lead">Every person in our directory has been reviewed by Joe personally. These are providers our families actually use.</p>
+      <h1 id="page-title">Get listed.<br>Reach the right families.</h1>
+      <p class="lead">The Cove76 directory connects residents and families with trusted therapists, coaches, psychiatrists, and specialists. We're building it now — apply to be included.</p>
     </div>
   </header>
 
-  <!-- ── Directory ── -->
-  <section class="section" aria-labelledby="directory-heading">
+  <!-- ── What the directory is ── -->
+  <section class="section section--cream" aria-labelledby="about-dir-heading">
     <div class="container">
-      <div class="section-header reveal">
-        <span class="eyebrow">The Directory</span>
-        <h2 id="directory-heading">Find the right support.</h2>
-        <span class="gold-line" aria-hidden="true"></span>
-        <p class="lead">Filter by specialty or browse all providers. Each listing includes specialty, who they serve, location, and how to reach them.</p>
-      </div>
-
-      <!-- Filters -->
-      <div class="directory-filters" role="group" aria-label="Filter providers by category">
-        <button class="filter-btn active" data-filter="all">All Providers</button>
-        <button class="filter-btn" data-filter="therapist">Therapists</button>
-        <button class="filter-btn" data-filter="psychiatrist">Psychiatrists</button>
-        <button class="filter-btn" data-filter="coach">Coaches</button>
-        <button class="filter-btn" data-filter="employment">Employment</button>
-        <button class="filter-btn" data-filter="education">Education</button>
-      </div>
-
-      <!-- Provider Grid (populated by JS from referrals.json) -->
-      <div class="provider-grid" id="providerGrid" aria-label="Provider listings" aria-live="polite">
-        <!-- JS renders cards here -->
-        <noscript>
-          <p style="text-align:center; color:var(--text-mid);">
-            Please enable JavaScript to view the provider directory. 
-            Or contact us directly at <a href="tel:9148045622">(914) 804-5622</a> for provider recommendations.
+      <div class="split reveal">
+        <div>
+          <span class="eyebrow">About the Directory</span>
+          <h2 id="about-dir-heading">A curated network,<br>personally reviewed.</h2>
+          <span class="gold-line gold-line--left" aria-hidden="true"></span>
+          <p class="lead" style="margin-top: 1.2rem;">
+            Joe personally reviews every applicant before they're listed. This isn't a marketplace — 
+            it's a trusted network of professionals who are actually right for this population.
           </p>
-        </noscript>
-      </div>
-
-      <!-- CTA to be listed -->
-      <div class="directory-cta-box reveal">
-        <span class="eyebrow" style="color: var(--gold-light);">For Professionals</span>
-        <h3>Want to be listed in the Cove76 directory?</h3>
-        <p>
-          We accept applications from licensed therapists, certified coaches, psychiatrists, 
-          employment specialists, and educational programs serving the recovery population. 
-          All applicants are reviewed by Joe before approval.
-        </p>
-        <a href="#apply" class="btn btn-primary">Apply to Be Listed</a>
+          <p style="margin-top: 1rem;">
+            We're building the directory now and will be adding listings soon. If you're a licensed therapist, 
+            certified coach, psychiatrist, employment specialist, or run an educational program serving the 
+            recovery community, submit your application below to be considered.
+          </p>
+        </div>
+        <div style="display: flex; flex-direction: column; gap: 16px;">
+          <div class="pillar-item reveal reveal-delay-1">
+            <div class="pillar-item__icon"></div>
+            <div>
+              <h5>Therapists & Counselors</h5>
+              <p>Licensed therapists specializing in addiction, trauma, and dual diagnosis.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal reveal-delay-2">
+            <div class="pillar-item__icon"></div>
+            <div>
+              <h5>Psychiatrists & Prescribers</h5>
+              <p>Medication management and psychiatric support for those in recovery.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal reveal-delay-3">
+            <div class="pillar-item__icon"></div>
+            <div>
+              <h5>Coaches & Employment Specialists</h5>
+              <p>Life coaches, career counselors, and vocational support.</p>
+            </div>
+          </div>
+          <div class="pillar-item reveal reveal-delay-4">
+            <div class="pillar-item__icon"></div>
+            <div>
+              <h5>Educational Programs</h5>
+              <p>GED prep, vocational training, and higher education pathways.</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ── Application Form ── -->
-  <section class="section section--cream" id="apply" aria-labelledby="apply-heading">
+  <section class="section" id="apply" aria-labelledby="apply-heading">
     <div class="container">
       <div class="section-header reveal">
         <span class="eyebrow">Apply to Be Listed</span>
-        <h2 id="apply-heading">Join the directory.</h2>
+        <h2 id="apply-heading">Submit your information.</h2>
         <span class="gold-line" aria-hidden="true"></span>
         <p class="lead">
           Fill out the form below and Joe will review your application personally. If it's a good fit, he'll be in touch with next steps.
@@ -868,7 +875,7 @@ p  { line-height: 1.8; color: var(--text-mid); }
           method="POST"
           aria-label="Directory listing application"
         >
-          <input type="hidden" name="_subject" value="Directory Listing Application, Cove76" />
+          <input type="hidden" name="_subject" value="Directory Listing Application — Cove76" />
 
           <div class="form-grid">
             <div class="form-group">
@@ -925,23 +932,10 @@ p  { line-height: 1.8; color: var(--text-mid); }
             <button type="submit" class="btn btn-primary" style="min-width: 200px;">Submit Application</button>
           </div>
           <p class="form-disclaimer">
-            Applications are reviewed personally by Joe Farkas. Listing is paid and subject to approval. 
-            We may follow up by phone or email. All information is kept confidential.
+            Applications are reviewed personally by Joe Farkas. We may follow up by phone or email. All information is kept confidential.
           </p>
         </form>
       </div>
-    </div>
-  </section>
-
-  <!-- ── Disclaimer ── -->
-  <section class="section--sm" aria-label="Directory disclaimer">
-    <div class="container" style="max-width: 720px; text-align: center;">
-      <p style="font-size: 0.82rem; color: var(--text-light); line-height: 1.7;">
-        <strong>Disclaimer:</strong> The providers listed in this directory are independent professionals. 
-        Cove76 does not employ, endorse, or guarantee the services of any listed provider. 
-        All listings have been personally reviewed, but Cove76 assumes no liability for the services rendered 
-        by listed professionals. Please conduct your own due diligence before engaging any provider.
-      </p>
     </div>
   </section>
 
