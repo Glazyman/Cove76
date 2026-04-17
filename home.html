@@ -847,47 +847,36 @@ p  { line-height: 1.8; color: var(--text-mid); }
       </div>
 
       <style>
-        .gallery-img { cursor: zoom-in; transition: opacity .25s, transform .25s; display: block; width: 100%; object-fit: cover; border-radius: var(--radius-sm); }
-        .gallery-img:hover { opacity: 0.88; transform: scale(1.01); }
-        .photo-grid { display: grid; gap: 10px; }
-        .photo-grid__hero { border-radius: var(--radius-md) !important; }
-        /* Row 2: big left + stacked right */
-        .photo-grid__row2 { display: grid; grid-template-columns: 3fr 2fr; gap: 10px; margin-top: 10px; }
-        .photo-grid__row2-right { display: grid; grid-template-rows: 1fr 1fr; gap: 10px; }
-        /* Row 3: 3 equal */
-        .photo-grid__row3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 10px; margin-top: 10px; }
-        @media (max-width: 600px) {
-          .photo-grid__row2 { grid-template-columns: 1fr; }
-          .photo-grid__row2-right { grid-template-rows: auto; grid-template-columns: 1fr 1fr; }
-          .photo-grid__row3 { grid-template-columns: 1fr 1fr; }
+        .collage-wrap {
+          column-count: 3;
+          column-gap: 6px;
         }
+        .collage-wrap .gallery-img {
+          width: 100%;
+          height: auto;
+          display: block;
+          border-radius: var(--radius-sm);
+          margin-bottom: 6px;
+          break-inside: avoid;
+          cursor: zoom-in;
+          transition: opacity .2s, transform .2s;
+        }
+        .collage-wrap .gallery-img:hover { opacity: 0.88; transform: scale(1.01); }
+        @media (max-width: 700px) { .collage-wrap { column-count: 2; } }
+        @media (max-width: 420px) { .collage-wrap { column-count: 1; } }
       </style>
 
-      <!-- Hero: full-width exterior -->
-      <img src="assets/img/house-exterior.jpg" alt="Cove76, the house exterior" class="gallery-img photo-grid__hero" style="height:440px; object-position:12% center;" onclick="openLightbox(this)">
-
-      <!-- Row 2: living room large left, kitchen + bedroom stacked right -->
-      <div class="photo-grid__row2">
-        <img src="assets/img/living-room.jpg" alt="The Cove76 living room" class="gallery-img" style="height:340px;" onclick="openLightbox(this)">
-        <div class="photo-grid__row2-right">
-          <img src="assets/img/kitchen.jpg" alt="The Cove76 kitchen" class="gallery-img" style="height:165px;" onclick="openLightbox(this)">
-          <img src="assets/img/bedroom.jpg" alt="A private bedroom" class="gallery-img" style="height:165px; object-position:40% 60%;" onclick="openLightbox(this)">
-        </div>
+      <!-- Tight 3-column masonry collage — every image shown in full -->
+      <div class="collage-wrap">
+        <img src="assets/img/house-exterior.jpg" alt="Cove76, the house exterior" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/living-room.jpg" alt="The Cove76 living room" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/kitchen.jpg" alt="The Cove76 kitchen" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/bedroom.jpg" alt="A private bedroom" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/deck-pergola.jpg" alt="The Cove76 deck pergola" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/deck-chairs.jpg" alt="The Cove76 deck with chairs" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/upstairs.jpg" alt="The Cove76 upstairs" class="gallery-img" onclick="openLightbox(this)">
+        <img src="assets/img/creek.jpg" alt="The creek near Cove76" class="gallery-img" onclick="openLightbox(this)">
       </div>
-
-      <!-- Row 3: 4 photos -->
-      <div style="display:grid; grid-template-columns:repeat(4,1fr); gap:10px; margin-top:10px;">
-        <img src="assets/img/deck-pergola.jpg" alt="The Cove76 deck seating" class="gallery-img" style="height:200px;" onclick="openLightbox(this)">
-        <img src="assets/img/deck-chairs.jpg" alt="The Cove76 deck with colourful chairs" class="gallery-img" style="height:200px;" onclick="openLightbox(this)">
-        <img src="assets/img/upstairs.jpg" alt="The Cove76 kitchen" class="gallery-img" style="height:200px;" onclick="openLightbox(this)">
-        <img src="assets/img/creek.jpg" alt="The creek near Cove76" class="gallery-img" style="height:200px; object-position:center 40%;" onclick="openLightbox(this)">
-      </div>
-
-      <style>
-        @media (max-width:600px) {
-          .photo-grid__row3 { grid-template-columns: 1fr 1fr !important; }
-        }
-      </style>
 
       <script>
         function openLightbox(img) {
